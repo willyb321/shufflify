@@ -1,0 +1,18 @@
+version: '2.2'
+services:
+  app:
+    build: .
+    image: willyb321/shufflify
+    restart: always
+    networks:
+      - web
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:shufflify.willb.info"
+      - "traefik.basic.port=80"
+      - "traefik.basic.protocol=http"
+
+networks:
+  web:
+    external: true
