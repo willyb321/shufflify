@@ -8,7 +8,7 @@ RUN npm i -g bower
 
 RUN npm i
 
-RUN bower i
+RUN bower i --allow-root
 
 RUN gem install compass
 
