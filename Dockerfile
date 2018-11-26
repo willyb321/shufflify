@@ -1,4 +1,4 @@
-FROM starefossen/ruby-node
+FROM starefossen/ruby-node AS builder
 
 WORKDIR /app
 
