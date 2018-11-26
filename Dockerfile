@@ -4,9 +4,11 @@ WORKDIR /app
 
 COPY . /app
 
+RUN npm i -g bower
+
 RUN npm i
 
-RUN ./node_modules/.bin/bower install
+RUN bower i
 
 RUN gem install compass
 
