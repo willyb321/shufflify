@@ -31,7 +31,7 @@
 			redirect-uri="{{localhost ? 'http://127.0.0.1:9000' : 'https://shufflify.willb.info'}}"
 			response-type="token"
 			profile-uri="https://api.spotify.com/v1/me"
-			scope="user-library-read playlist-read-private playlist-modify-private">
+			scope="user-library-read playlist-read-private playlist-modify-private playlist-modify-public">
 	</oauth>
 
 	<form class="form-horizontal logged-in-content" ng-show="profile">
