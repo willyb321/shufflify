@@ -97,7 +97,7 @@ spotifyServices.factory('SpotifyLibrary', ["$q", "$http", function ($q, $http) {
 								return;
 							}
 
-							library_tracks.push({...playlist_track.track});
+							library_tracks.push({uri: playlist_track.track.uri, duration_ms: playlist_track.track.duration_ms, name: playlist_track.track.name, artists: playlist_track.track.artists});
 							++handled;
 						});
 
@@ -258,7 +258,7 @@ spotifyServices.factory('SpotifyPlaylist', ["$q", "$http", "Profile", function (
 								continue;
 							}
 
-							playlist_tracks.push({...playlist_track.track});
+							playlist_tracks.push({uri: playlist_track.track.uri, duration_ms: playlist_track.track.duration_ms, name: playlist_track.track.name, artists: playlist_track.track.artists});
 							++handled;
 						}
 
@@ -287,7 +287,7 @@ spotifyServices.factory('SpotifyPlaylist', ["$q", "$http", "Profile", function (
 								return;
 							}
 
-							playlist_tracks.push({...playlist_track.track});
+							playlist_tracks.push({uri: playlist_track.track.uri, duration_ms: playlist_track.track.duration_ms, name: playlist_track.track.name, artists: playlist_track.track.artists});
 							++handled;
 						});
 

@@ -304,11 +304,13 @@ shufflifyApp.controller('MainCtrl', ["$scope", "$http", "$location", "SpotifySou
 						result.forEach(function (tracks) {
 							track_uris = track_uris.concat(tracks);
 						});
-						let trackInfos = track_uris;
-						track_uris = track_uris.map(e => e.uri)
+						var trackInfos = track_uris;
+						track_uris = track_uris.map(function (e) {
+							return e.uri;
+						})
 						var writer = extendedWriter();
-						trackInfos.forEach(track => {
-							writer.file(track.uri, Math.round(track.duration_ms / 1000), `${track.artists[0].name} - ${track.name}`);
+						trackInfos.forEach(function (track) {
+							writer.file(track.uri, Math.round(track.duration_ms / 1000), track.artists[0].name + ' - ' + track.name);
 						})
 						console.log(writer.toString())
 						// Filter strange results out
